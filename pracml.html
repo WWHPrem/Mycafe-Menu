@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HTML5 Tags Reference — Quick Guide</title>
+  <style>
+    body { font-family: system-ui, Arial; line-height:1.45; padding:20px; max-width:1000px; margin:auto; }
+    h1,h2 { margin-top:1.2rem; }
+    table { width:100%; border-collapse:collapse; margin-bottom:1.2rem; }
+    th,td { border:1px solid #ddd; padding:8px; vertical-align:top; }
+    th { background:#f4f4f4; text-align:left; }
+    code { background:#f2f2f8; padding:2px 5px; border-radius:4px; font-size:0.95em; }
+    pre { background:#fbfbff; padding:8px; border-radius:6px; overflow:auto; }
+    .small { font-size:0.9em; color:#555; }
+    .deprecated { color:darkred; font-weight:bold; }
+  </style>
+</head>
+<body>
+  <h1>HTML5 Tags — Quick Reference</h1>
+  <p class="small">Save this file and open in browser. Each row: <code>&lt;tag&gt;</code>, short description, small example.</p>
+
+  <h2>Document / Metadata</h2>
+  <table>
+    <tr><th>Tag</th><th>Description</th><th>Example</th></tr>
+    <tr><td><code>&lt;!doctype&gt;</code></td><td>Document type declaration (HTML5)</td><td><pre>&lt;!doctype html&gt;</pre></td></tr>
+    <tr><td><code>&lt;html&gt;</code></td><td>Root element (lang attribute)</td><td><pre>&lt;html lang="en"&gt;…&lt;/html&gt;</pre></td></tr>
+    <tr><td><code>&lt;head&gt;</code></td><td>Metadata container (title, meta, links)</td><td><pre>&lt;head&gt;…&lt;/head&gt;</pre></td></tr>
+    <tr><td><code>&lt;title&gt;</code></td><td>Page title shown in browser tab</td><td><pre>&lt;title&gt;My Page&lt;/title&gt;</pre></td></tr>
+    <tr><td><code>&lt;base&gt;</code></td><td>Base URL for relative links</td><td><pre>&lt;base href="https://example.com/"&gt;</pre></td></tr>
+    <tr><td><code>&lt;meta&gt;</code></td><td>Charset, viewport, SEO meta</td><td><pre>&lt;meta charset="utf-8"&gt;</pre></td></tr>
+    <tr><td><code>&lt;link&gt;</code></td><td>CSS, icons, rel links</td><td><pre>&lt;link rel="stylesheet" href="styles.css"&gt;</pre></td></tr>
+    <tr><td><code>&lt;style&gt;</code></td><td>Internal CSS</td><td><pre>&lt;style&gt;body{margin:0}&lt;/style&gt;</pre></td></tr>
+    <tr><td><code>&lt;script&gt;</code></td><td>JavaScript (inline/external)</td><td><pre>&lt;script src="app.js"&gt;&lt;/script&gt;</pre></td></tr>
+    <tr><td><code>&lt;noscript&gt;</code></td><td>Shown if JS disabled</td><td><pre>&lt;noscript&gt;Please enable JS&lt;/noscript&gt;</pre></td></tr>
+  </table>
+
+  <h2>Sectioning & Outline</h2>
+  <table>
+    <tr><th>Tag</th><th>Description</th><th>Example</th></tr>
+    <tr><td><code>&lt;body&gt;</code></td><td>Main document content</td><td><pre>&lt;body&gt;…&lt;/body&gt;</pre></td></tr>
+    <tr><td><code>&lt;header&gt;</code></td><td>Page or section header</td><td><pre>&lt;header&gt;&lt;h1&gt;Logo&lt;/h1&gt;&lt;/header&gt;</pre></td></tr>
+    <tr><td><code>&lt;nav&gt;</code></td><td>Navigation links</td><td><pre>&lt;nav&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/nav&gt;</pre></td></tr>
+    <tr><td><code>&lt;main&gt;</code></td><td>Primary page content (one per doc)</td><td><pre>&lt;main&gt;Main content&lt;/main&gt;</pre></td></tr>
+    <tr><td><code>&lt;section&gt;</code></td><td>Generic section</td><td><pre>&lt;section&gt;&lt;h2&gt;Section&lt;/h2&gt;&lt;/section&gt;</pre></td></tr>
+    <tr><td><code>&lt;article&gt;</code></td><td>Self-contained article or post</td><td><pre>&lt;article&gt;Blog post&lt;/article&gt;</pre></td></tr>
+    <tr><td><code>&lt;aside&gt;</code></td><td>Sidebar / tangential content</td><td><pre>&lt;aside&gt;Related&lt;/aside&gt;</pre></td></tr>
+    <tr><td><code>&lt;footer&gt;</code></td><td>Footer for page/section</td><td><pre>&lt;footer&gt;© 2025&lt;/footer&gt;</pre></td></tr>
+    <tr><td><code>&lt;address&gt;</code></td><td>Contact info / author address</td><td><pre>&lt;address&gt;Email: me@ex&lt;/address&gt;</pre></td></tr>
+    <tr><td><code>&lt;h1&gt;…&lt;h6&gt;</code></td><td>Headings, h1 highest</td><td><pre>&lt;h1&gt;Title&lt;/h1&gt;</pre></td></tr>
+  </table>
+
+  <h2>Grouping & Text Content</h2>
+  <table>
+    <tr><th>Tag</th><th>Description</th><th>Example</th></tr>
+    <tr><td><code>&lt;p&gt;</code></td><td>Paragraph</td><td><pre>&lt;p&gt;Hello world&lt;/p&gt;</pre></td></tr>
+    <tr><td><code>&lt;hr&gt;</code></td><td>Horizontal rule (thematic break)</td><td><pre>&lt;hr&gt;</pre></td></tr>
+    <tr><td><code>&lt;pre&gt;</code></td><td>Preformatted text</td><td><pre>&lt;pre&gt;line 1\n line 2&lt;/pre&gt;</pre></td></tr>
+    <tr><td><code>&lt;blockquote&gt;</code></td><td>Long quotation</td><td><pre>&lt;blockquote&gt;Quote&lt;/blockquote&gt;</pre></td></tr>
+    <tr><td><code>&lt;ol&gt;, &lt;ul&gt;, &lt;li&gt;</code></td><td>Ordered / unordered lists</td><td><pre>&lt;ul&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ul&gt;</pre></td></tr>
+    <tr><td><code>&lt;dl&gt;, &lt;dt&gt;, &lt;dd&gt;</code></td><td>Definition list</td><td><pre>&lt;dl&gt;&lt;dt&gt;Term&lt;/dt&gt;&lt;dd&gt;Desc&lt;/dd&gt;&lt;/dl&gt;</pre></td></tr>
+    <tr><td><code>&lt;figure&gt;, &lt;figcaption&gt;</code></td><td>Image with caption</td><td><pre>&lt;figure&gt;&lt;img src=&quot;x.jpg&quot;&gt;&lt;figcaption&gt;Cap&lt;/figcaption&gt;&lt;/figure&gt;</pre></td></tr>
+    <tr><td><code>&lt;div&gt;</code></td><td>Generic block container</td><td><pre>&lt;div class=&quot;box&quot;&gt;…&lt;/div&gt;</pre></td></tr>
+    <tr><td><code>&lt;span&gt;</code></td><td>Generic inline container</td><td><pre>&lt;span class=&quot;note&quot;&gt;text&lt;/span&gt;</pre></td></tr>
+  </table>
+
+  <h2>Inline / Phrase Tags</h2>
+  <table>
+    <tr><th>Tag</th><th>Description</th><th>Example</th></tr>
+    <tr><td><code>&lt;a&gt;</code></td><td>Hyperlink</td><td><pre>&lt;a href=&quot;https://example.com&quot;&gt;Link&lt;/a&gt;</pre></td></tr>
+    <tr><td><code>&lt;em&gt;</code></td><td>Emphasis (usually italic)</td><td><pre>&lt;em&gt;Important&lt;/em&gt;</pre></td></tr>
+    <tr><td><code>&lt;strong&gt;</code></td><td>Strong importance (usually bold)</td><td><pre>&lt;strong&gt;Strong&lt;/strong&gt;</pre></td></tr>
+    <tr><td><code>&lt;small&gt;</code></td><td>Smaller print</td><td><pre>&lt;small&gt;Fine print&lt;/small&gt;</pre></td></tr>
+    <tr><td><code>&lt;mark&gt;</code></td><td>Highlighted text</td><td><pre>&lt;mark&gt;Search hit&lt;/mark&gt;</pre></td></tr>
+    <tr><td><code>&lt;code&gt;, &lt;var&gt;, &lt;samp&gt;, &lt;kbd&gt;</code></td><td>Code / variable / sample / keyboard input</td><td><pre>&lt;code&gt;let x=1;&lt;/code&gt;</pre></td></tr>
+    <tr><td><code>&lt;abbr&gt;</code></td><td>Abbreviation</td><td><pre>&lt;abbr title=&quot;HyperText Markup Language&quot;&gt;HTML&lt;/abbr&gt;</pre></td></tr>
+    <tr><td><code>&lt;time&gt;</code></td><td>Time/date machine-readable</td><td><pre>&lt;time datetime=&quot;2025-09-06&quot;&gt;6 Sep 2025&lt;/time&gt;</pre></td></tr>
+    <tr><td><code>&lt;b&gt;, &lt;i&gt;, &lt;u&gt;, &lt;sub&gt;, &lt;sup&gt;</code></td><td>Stylistic inline elements</td><td><pre>&lt;u&gt;under&lt;/u&gt;&lt;sub&gt;2&lt;/sub&gt;</pre></td></tr>
+    <tr><td><code>&lt;span&gt;</code></td><td>Inline generic container</td><td><pre>&lt;span class=&quot;tag&quot;&gt;new&lt;/span&gt;</pre></td></tr>
+  </table>
+
+  <h2>Images & Media</h2>
+  <table>
+    <tr><th>Tag</th><th>Description</th><th>Example</th></tr>
+    <tr><td><code>&lt;img&gt;</code></td><td>Image (alt required for accessibility)</td><td><pre>&lt;img src=&quot;pic.jpg&quot; alt=&quot;pic&quot;&gt;</pre></td></tr>
+    <tr><td><code>&lt;picture&gt;, &lt;source&gt;</code></td><td>Responsive images / art direction</td><td><pre>&lt;picture&gt;&lt;source media=&quot;(min-width:600px)&quot; srcset=&quot;big.jpg&quot;&gt;&lt;img src=&quot;small.jpg&quot;&gt;&lt;/picture&gt;</pre></td></tr>
+    <tr><td><code>&lt;figure&gt;</code></td><td>Image container (with caption)</td><td><pre>&lt;figure&gt;&lt;img src=&quot;x&quot;&gt;&lt;/figure&gt;</pre></td></tr>
+    <tr><td><code>&lt;audio&gt;, &lt;video&gt;</code></td><td>Multimedia playback</td><td><pre>&lt;audio controls src=&quot;s.mp3&quot;&gt;&lt;/audio&gt;</pre></td></tr>
+    <tr><td><code>&lt;source&gt;</code></td><td>Media source for audio/video/picture</td><td><pre>&lt;source src=&quot;track.webm&quot; type=&quot;video/webm&quot;&gt;</pre></td></tr>
+    <tr><td><code>&lt;track&gt;</code></td><td>Captions/subtitles for video</td><td><pre>&lt;track kind=&quot;captions&quot; src=&quot;en.vtt&quot;&gt;</pre></td></tr>
+    <tr><td><code>&lt;iframe&gt;</code></td><td>Embed another page</td><td><pre>&lt;iframe src=&quot;https://example.com&quot;&gt;&lt;/iframe&gt;</pre></td></tr>
+    <tr><td><code>&lt;canvas&gt;</code></td><td>Drawable area for JS graphics</td><td><pre>&lt;canvas id=&quot;c&quot;&gt;&lt;/canvas&gt;</pre></td></tr>
+    <tr><td><code>&lt;svg&gt;</code></td><td>Inline vector graphics (SVG)</td><td><pre>&lt;svg width=&quot;40&quot; height=&quot;40&quot;&gt;…&lt;/svg&gt;</pre></td></tr>
+  </table>
+
+  <h2>Embedded & Interactive</h2>
+  <table>
+    <tr><th>Tag</th><th>Description</th><th>Example</th></tr>
+    <tr><td><code>&lt;embed&gt;</code></td><td>Embed external content (plugin)</td><td><pre>&lt;embed src=&quot;file.swf&quot;&gt;</pre></td></tr>
+    <tr><td><code>&lt;object&gt;</code></td><td>Generic embedded object</td><td><pre>&lt;object data=&quot;file.pdf&quot;&gt;&lt;/object&gt;</pre></td></tr>
+    <tr><td><code>&lt;param&gt;</code></td><td>Parameters for &lt;object&gt;</td><td><pre>&lt;param name=&quot;autoplay&quot; value=&quot;true&quot;&gt;</pre></td></tr>
+    <tr><td><code>&lt;details&gt;, &lt;summary&gt;</code></td><td>Collapsible disclosure widget</td><td><pre>&lt;details&gt;&lt;summary&gt;More&lt;/summary&gt;Hidden&lt;/details&gt;</pre></td></tr>
+    <tr><td><code>&lt;dialog&gt;</code></td><td>Modal dialog (can be shown with JS)</td><td><pre>&lt;dialog&gt;I am a dialog&lt;/dialog&gt;</pre></td></tr>
+    <tr><td><code>&lt;template&gt;</code></td><td>Hidden HTML template (cloned with JS)</td><td><pre>&lt;template&gt;&lt;div&gt;T&lt;/div&gt;&lt;/template&gt;</pre></td></tr>
+    <tr><td><code>&lt;slot&gt;</code></td><td>Web components insertion point</td><td><pre>&lt;slot name=&quot;x&quot;&gt;&lt;/slot&gt;</pre></td></tr>
+  </table>
+
+  <h2>Tables</h2>
+  <table>
+    <tr><th>Tag</th><th>Description</th><th>Example</th></tr>
+    <tr><td><code>&lt;table&gt;</code></td><td>Tabular data</td><td><pre>&lt;table&gt;…&lt;/table&gt;</pre></td></tr>
+    <tr><td><code>&lt;caption&gt;</code></td><td>Table caption</td><td><pre>&lt;caption&gt;Sales&lt;/caption&gt;</pre></td></tr>
+    <tr><td><code>&lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;</code></td><td>Table sections</td><td><pre>&lt;thead&gt;&lt;tr&gt;&lt;/tr&gt;&lt;/thead&gt;</pre></td></tr>
+    <tr><td><code>&lt;tr&gt;, &lt;th&gt;, &lt;td&gt;</code></td><td>Row, header cell, data cell</td><td><pre>&lt;tr&gt;&lt;th&gt;H&lt;/th&gt;&lt;td&gt;D&lt;/td&gt;&lt;/tr&gt;</pre></td></tr>
+    <tr><td><code>&lt;colgroup&gt;, &lt;col&gt;</code></td><td>Column groups / attributes</td><td><pre>&lt;colgroup&gt;&lt;col span=&quot;2&quot;&gt;&lt;/colgroup&gt;</pre></td></tr>
+  </table>
+
+  <h2>Forms & Inputs</h2>
+  <table>
+    <tr><th>Tag</th><th>Description</th><th>Example</th></tr>
+    <tr><td><code>&lt;form&gt;</code></td><td>Form container</td><td><pre>&lt;form action=&quot;/submit&quot;&gt;…&lt;/form&gt;</pre></td></tr>
+    <tr><td><code>&lt;input&gt;</code></td><td>Many types: text, email, checkbox, radio, file, etc.</td><td><pre>&lt;input type=&quot;text&quot; name=&quot;nm&quot;&gt;</pre></td></tr>
+    <tr><td><code>&lt;textarea&gt;</code></td><td>Multi-line text input</td><td><pre>&lt;textarea&gt;&lt;/textarea&gt;</pre></td></tr>
+    <tr><td><code>&lt;select&gt;, &lt;option&gt;</code></td><td>Dropdown</td><td><pre>&lt;select&gt;&lt;option&gt;A&lt;/option&gt;&lt;/select&gt;</pre></td></tr>
+    <tr><td><code>&lt;button&gt;</code></td><td>Clickable button</td><td><pre>&lt;button type=&quot;submit&quot;&gt;Send&lt;/button&gt;</pre></td></tr>
+    <tr><td><code>&lt;label&gt;</code></td><td>Label for inputs (accessibility)</td><td><pre>&lt;label for=&quot;id&quot;&gt;Name&lt;/label&gt;</pre></td></tr>
+    <tr><td><code>&lt;fieldset&gt;, &lt;legend&gt;</code></td><td>Group controls</td><td><pre>&lt;fieldset&gt;&lt;legend&gt;Group&lt;/legend&gt;&lt;/fieldset&gt;</pre></td></tr>
+    <tr><td><code>&lt;datalist&gt;</code></td><td>Autocomplete options for inputs</td><td><pre>&lt;datalist id=&quot;l&quot;&gt;&lt;option&gt;One&lt;/option&gt;&lt;/datalist&gt;</pre></td></tr>
+    <tr><td><code>&lt;output&gt;</code></td><td>Result of a calculation</td><td><pre>&lt;output name=&quot;o&quot;&gt;0&lt;/output&gt;</pre></td></tr>
+    <tr><td><code>&lt;progress&gt;, &lt;meter&gt;</code></td><td>Progress bar / measurement</td><td><pre>&lt;progress value=&quot;30&quot; max=&quot;100&quot;&gt;&lt;/progress&gt;</pre></td></tr>
+  </table>
+
+  <h2>Web Components / Modern</h2>
+  <table>
+    <tr><th>Tag</th><th>Description</th><th>Example</th></tr>
+    <tr><td><code>&lt;template&gt;</code></td><td>Template for cloning with JS</td><td><pre>&lt;template&gt;&lt;div&gt;Hi&lt;/div&gt;&lt;/template&gt;</pre></td></tr>
+    <tr><td><code>&lt;slot&gt;</code></td><td>Placeholder in shadow DOM</td><td><pre>&lt;slot&gt;&lt;/slot&gt;</pre></td></tr>
+  </table>
+
+  <h2>Deprecated / Obsolete (avoid)</h2>
+  <p class="deprecated">These tags are obsolete in modern HTML — don't use in new projects:</p>
+  <ul>
+    <li><code>&lt;font&gt;</code>, <code>&lt;center&gt;</code>, <code>&lt;big&gt;</code>, <code>&lt;strike&gt;</code>, <code>&lt;tt&gt;</code> — use CSS instead.</li>
+    <li>Old presentational attributes like <code>bgcolor</code>, <code>align</code>, etc. — use CSS.</li>
+  </ul>
+
+  <hr>
+  <p class="small">Ye list most commonly used HTML5 tags cover karti hai. Agar chahiye to main iska ek interactive cheatsheet bana ke bhi dunga (search, examples, live sandbox) — batado kaunsa format chahiye (PDF / in-VSCode / printable)?</p>
+</body>
+</html>

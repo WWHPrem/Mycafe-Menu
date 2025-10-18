@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Naidu's Cafe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* General styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(120deg, #f7edd9 0%, #ffe6e6 100%);
+      color: #2b2b2b;
+    }
+
+    .menu-container {
+      max-width: 600px;
+      background: #fffdfa;
+      margin: 40px auto 20px auto;
+      border-radius: 25px;
+      box-shadow: 0 4px 40px 0 #e6c8a3;
+      overflow: hidden;
+      border: 2px solid #f2d2b0;
+      position: relative;
+    }
+
+    header {
+      background: linear-gradient(90deg, #eab676 60%, #ffe6e6 100%);
+      color: #573a1d;
+      padding: 48px 24px 32px 24px;
+      text-align: center;
+      position: relative;
+    }
+
+    header::before {
+      content: "☕";
+      font-size: 48px;
+      position: absolute;
+      top: 12px;
+      left: 26px;
+      opacity: 0.4;
+      transform: rotate(-15deg);
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.7rem;
+      margin: 0 0 6px 0;
+      letter-spacing: 2px;
+    }
+
+    header h3 {
+      margin: 10px 0 0 0;
+      font-weight: 400;
+      font-size: 1.05rem;
+      color: #af7a37;
+      letter-spacing: 1.1px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    nav.menu-nav {
+      display: flex;
+      justify-content: center;
+      background: #f9e7cd;
+      border-bottom: 1.5px solid #e8cdab;
+      font-family: 'Montserrat', sans-serif;
+      box-sizing: border-box;
+    }
+    nav.menu-nav button {
+      background: none;
+      border: none;
+      padding: 14px 32px;
+      margin: 0;
+      font-size: 1.08rem;
+      color: #573a1d;
+      cursor: pointer;
+      outline: none;
+      letter-spacing: 1.2px;
+      transition: background 0.18s,color 0.2s;
+      font-weight: bold;
+    }
+    nav.menu-nav button.active, nav.menu-nav button:hover {
+      background: #eab676;
+      color: #fffdfa;
+      border-radius: 16px 16px 0 0;
+    }
+
+    .menu-page {
+      display: none;
+      animation: fadein 0.6s;
+      padding: 36px 36px;
+    }
+    .menu-page.active {
+      display: block;
+    }
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(20px);}
+      to   { opacity: 1; transform: translateY(0);}
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      color: #b3813f;
+      font-size: 1.35rem;
+      margin: 40px 0 16px 0;
+      text-align: left;
+      position: relative;
+      letter-spacing: 1.2px;
+    }
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 3px;
+      background: #eab676;
+      border-radius: 2px;
+      position: absolute;
+      left: -40px;
+      top: 55%;
+      transform: translateY(-50%);
+    }
+    .menu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 18px 14px 18px 18px;
+      background: linear-gradient(90deg,#fffdfa 70%,#f8ecd7 100%);
+      border-radius: 16px;
+      box-shadow: 0 2px 10px #faeee0a8;
+      transition: box-shadow 0.2s;
+      border: 1.2px solid #faeee0;
+      margin-bottom: 0;
+      position: relative;
+      overflow: visible;
+    }
+    .menu-item:hover {
+      box-shadow: 0 4px 20px 0 #f5e0bc;
+      border: 1.2px solid #f3e3d0;
+    }
+    .menu-item .item-name {
+      font-size: 1.16rem;
+      font-weight: 500;
+      font-family: 'Montserrat',sans-serif;
+      color:#785730;
+      letter-spacing: 0.5px;
+    }
+    .menu-item .item-desc {
+      color: #9f825a;
+      font-size: 0.96rem;
+      margin-top: 2px;
+      font-family: 'Segoe UI Light', 'Montserrat', verdana, sans-serif;
+      margin-bottom: 0;
+    }
+    .menu-item .item-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.22rem;
+      color: #c2954a;
+      font-weight: 700;
+      margin-left: 14px;
+      min-width: 68px;
+      text-align: right;
+    }
+    /* Little cup/sweet icons, use emoji */
+    .menu-item .item-emoji {
+      font-size: 1.33em; margin-right: 7px; vertical-align: middle;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 700px) {
+      .menu-container {max-width: 97%; margin: 10px;}
+      .menu-page {padding: 22px 7px;}
+    }
+    @media (max-width: 430px) {
+      header h1 { font-size: 2rem;}
+      .section-title {font-size: 1.08rem;}
+      .menu-item .item-name {font-size: 1.01rem;}
+      .menu-item .item-desc { font-size: 0.83rem;}
+      nav.menu-nav button {font-size: 0.98rem; padding: 8px 8px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-container">
+    <header>
+      <h1>Naidu's Cafe</h1>
+      <h3>Welcome to Naidu's Cafe</h3>
+    </header>
+    <nav class="menu-nav">
+      <button class="active" onclick="showMenuPage(0)">Coffee & Espresso</button>
+      <button onclick="showMenuPage(1)">Breakfast & Pastries</button>
+      <button onclick="showMenuPage(2)">Desserts & Drinks</button>
+    </nav>
+    <!-- Coffee & Espresso Page -->
+    <section class="menu-page active">
+      <div class="section-title">Signature Coffee</div>
+      <div class="menu-list">
+        <div class="menu-item">
+          <span>
+            <span class="item-emoji">☕</span>
+            <span class="item-name">Aurora House Blend</span>
+            <div class="item-desc">Rich, aromatic blend with hints of caramel and citrus.</div>
+          </span>
+          <span class="item-price">₹450</span>
+        </div>
+        <div class="menu-item">
+          <span>
+            <span class="item-emoji">✧</span>
+            <span class="item-name">Espresso Doppio</span>
+            <div class="item-desc">Double shot, velvety crema, intense finish.</div>
+          </span>
+          <span class="item-price">₹300</span>
+        </div>
+        <div class="menu-item">
+          <span>
+            <span class="item-emoji">🌿</span>
+            <span class="item-name">Matcha Latte</span>
+            <div class="item-desc">Vibrant Japanese matcha, steamed milk, honey drizzle.</div>
+          </span>
+          <span class="item-price">₹390</span>
+        </div>
+        <div class="menu-item">
+          <span>
+            <span class="item-emoji">🥛</span>
+            <span class="item-name">Cappuccino</span>
+            <div class="item-desc">Silky foam, Italian espresso, cocoa sprinkle.</div>
+          </span>
+          <span class="item-price">₹340</span>
+        </div>
+      </div>
+      <div class="section-title">Specialty Hot Drinks</div>
+      <div class="menu-list">
+        <div class="menu-item">
+          <span>
+            <span class="item-emoji">🍫</span>
+            <span class="item-name">Classic Hot Chocolate</span>
+            <div class="item-desc">Rich chocolate, whipped cream, mini marshmallows.</div>
+          </span>
+          <span class="item-price">₹320</span>
+        </div>
+        <div class="menu-item">
+          <span>
+            <span class="item-emoji">✨</span>
+            <span class="item-name">Golden Turmeric Latte</span>
+            <div class="item-desc">Steamed milk, turmeric, ginger, cinnamon & touch of honey.</div>
+          </span>
+          <span class="item-price">₹410</span>
+        </div>
+      </div>
+    </section>
+    <!-- Breakfast & Pastries Page -->
+    <section class="menu-page">
+      <div class="section-title">Morning Starts</div>
+      <div class="menu-list">
+        <div class="menu-item">
+          <span>
+            <span class="item-emoji">🥐</span>
+            <span class="item-name">Classic Croissant</span>
+            <div class="item-desc">Flaky French pastry, made fresh daily with real butter.</div>
+          </span>
+          <span class="item-price">₹250</span>
+        </div>
+        <div class="menu-item">
+          <span>
+            <span class="item-emoji">🍳</span>
+            <span class="item-name">Smoked Salmon Bagel</span>
+            <div class="item-desc">Cream cheese, dill, capers, and smoked salmon on toasted bagel.</div>
+          </span>
+          <span class="item-price">₹690</span>
+        </div>
+        <div class="menu-item">
+          <span>
+            <span class="item-emoji">🥓</span>
+            <span class="item-name">Aurora Sunrise Sandwich</span>
+            <div class="item-desc">Brioche bun, egg, bacon, cheddar, house aioli.</div>
+          </span>
+          <span class="item-price">₹560</span>
+        </div>
+      </div>
+      <div class="section-title">Bakery Selection</div>
+      <div class="menu-list">
+        <div class="menu-item">
+          <span>
+            <span class="item-emoji">🍞</span>
+            <span class="item-name">Banana Walnut Bread</span>
+            <div class="item-desc">Moist & nutty, classic crowd-pleaser.</div>
+          </span>
+          <span class="item-price">₹270</span>
+        </div>
+        <div class="menu-item">
+          <span>
+            <span class="item-emoji">🫐</span>
+            <span class="item-name">Blueberry Muffin</span>
+            <div class="item-desc">Bursting with local blueberries, sprinkled with sugar top.</div>
+          </span>
+          <span class="item-price">₹230</span>
+        </div>
+      </div>
+    </section>
+    <!-- Desserts & Drinks Page -->
+    <section class="menu-page">
+      <div class="section-title">Sweet Treats</div>
+      <div class="menu-list">
+        <div class="menu-item">
+          <span>
+            <span class="item-emoji">🍰</span>
+            <span class="item-name">Lemon Drizzle Cake</span>
+            <div class="item-desc">Light sponge, tart lemon icing, candied zest.</div>
+          </span>
+          <span class="item-price">₹380</span>
+        </div>
+        <div class="menu-item">
+          <span>
+            <span class="item-emoji">🍮</span>
+            <span class="item-name">Crème Brûlée</span>
+            <div class="item-desc">Vanilla custard, caramelized sugar top.</div>
+          </span>
+          <span class="item-price">₹420</span>
+        </div>
+        <div class="menu-item">
+          <span>
+            <span class="item-emoji">🍪</span>
+            <span class="item-name">Cookie Assortment</span>
+            <div class="item-desc">Choose: Choc chip, Macadamia, Oatmeal Raisin.</div>
+          </span>
+          <span class="item-price">₹190</span>
+        </div>
+      </div>
+      <div class="section-title">Cool Drinks</div>
+      <div class="menu-list">
+        <div class="menu-item">
+          <span>
+            <span class="item-emoji">🧋</span>
+            <span class="item-name">Iced Caramel Latte</span>
+            <div class="item-desc">Espresso, caramel, cold milk, served over ice.</div>
+          </span>
+          <span class="item-price">₹400</span>
+        </div>
+        <div class="menu-item">
+          <span>
+            <span class="item-emoji">🍓</span>
+            <span class="item-name">Berry Smoothie</span>
+            <div class="item-desc">Strawberry, raspberry, blueberry, Greek yogurt.</div>
+          </span>
+          <span class="item-price">₹440</span>
+        </div>
+        <div class="menu-item">
+          <span>
+            <span class="item-emoji">🥤</span>
+            <span class="item-name">Sparkling Lemonade</span>
+            <div class="item-desc">House-made fresh, sweet-tart, sparkling finish.</div>
+          </span>
+          <span class="item-price">₹290</span>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer style="text-align:center; margin-top:12px; font-size:0.98rem; color:#ab8343;">
+    <div style="padding-top:10px;">
+      <span style="font-size:1.2em;">&#127861;</span>
+      <span>Naidu's Cafe — Thank you for visiting!</span>
+    </div>
+  </footer>
+  <script>
+    function showMenuPage(idx) {
+      const pages = document.querySelectorAll('.menu-page');
+      pages.forEach((page, i) => {
+        page.classList.toggle('active', i === idx);
+      });
+      // Toggle nav buttons
+      const navBtns = document.querySelectorAll('.menu-nav button');
+      navBtns.forEach((btn, i) => {
+        btn.classList.toggle('active', i === idx);
+      });
+    }
+  </script>
+</body>
+</html>

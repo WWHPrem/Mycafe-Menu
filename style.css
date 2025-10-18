@@ -1,0 +1,193 @@
+/*  Body & Background  */
+body {
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 20px;
+  background: url("dreamy_bg.png.jpeg") no-repeat center center fixed;
+  background-size: cover; 
+  min-height: 100vh;
+  color: #333;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Optional semi-transparent overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(255,255,255,0%); 
+  z-index: -1;
+}
+
+/* Container */
+
+.heading-container h1 {
+  font-size: 3rem;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  color: #f1d3ee; 
+  text-shadow:
+    0 0 40px #a86bff,
+    0 0 80px #36a2eb; 
+  letter-spacing: 1px;
+  animation: glow 1s infinite alternate;
+}
+
+/* Glow Animation */
+@keyframes glow {
+  0% {
+    text-shadow:
+      0 0 5px #960a0a,
+      0 0 10px #d42269,
+      0 0 20px #ffb3ff,
+      0 0 40px #320a6a,
+      0 0 80px #36a2eb;
+  }
+  100% {
+    text-shadow:
+    0 0 50px #4f046c,
+      0 0 30px #8b0b61,
+      0 0 50px #490465,
+      0 0 100px #033c62;
+  }
+}
+
+
+.heading-container .subheading {
+  font-size: 1.6em;
+  color: #110303;
+  font-style: italic;
+  opacity: 0.9;
+  animation: fadeIn 2s forwards;
+  animation-delay: 2s;
+  text-align: center;
+  min-height: auto;
+}
+
+
+/* Outer Dashboard Container */
+.outer-dashboard {
+  width: 80%;
+  max-width: 1000px;
+  min-height: 20vh;
+  background: rgba(255, 255, 255, 0.25); 
+  border-radius: 100px;
+  backdrop-filter: blur(12px); 
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin: 40px 110px 50px 180px ;
+}
+
+
+/* top-section */
+.top-section {
+  display: flex;
+  gap: 50px;
+  padding: 0 25px 0 25px;
+  flex-wrap: wrap;
+}
+
+/*Left Container */
+.left-container {
+  flex: 1;
+  min-width: 280px;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 25px; 
+  
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.4);
+}
+
+/*Right Container (Table / Entries)*/
+.table-container {
+  flex: 2;
+  min-width: 300px;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.4);
+  overflow-x: auto;
+}
+
+/*  Bottom Center Container (Chart / Dashboard)  */
+.bottom-container {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Headings  */
+h1, h2, h3 {
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Form Styling */
+form label {
+  font-weight: bold;
+  color: #222;
+}
+form select, form textarea, form input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+  background: rgba(255,255,255,0.6);
+}
+form button {
+  margin-top: 15px;
+  padding: 10px 18px;
+  border: none;
+  background: #36a2eb;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+form button:hover {
+  background: #2b8ac6;
+}
+
+/* ----------------- Table Styling ----------------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255,255,255,0.6);
+  border-radius: 8px;
+  overflow: hidden;
+}
+th, td {
+  border: 1px solid rgba(200,200,200,0.5);
+  padding: 10px;
+  text-align: left;
+}
+th {
+  background: rgba(241,241,241,0.7);
+  color: #111;
+}
+
+/* ----------------- Responsive Adjustments ----------------- */
+@media (max-width: 1000px) {
+  .top-section {
+    flex-direction: column;
+  }
+  .add-entry-container, .table-container {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,40 @@
+h1 {
+    color: blue;
+}
+
+h2 {
+    color: green;
+}
+
+h3 {
+    color: red;
+}
+button {
+    background-color: lightgray;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    &:hover {
+        background-color: gray;
+    }
+}
+body {
+  background: #a5afb5;
+}
+
+body h1 {
+  color: white;
+  text-align: center;
+}
+
+button {
+    background-color: #217dbb;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5dade2;
+}

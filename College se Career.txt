@@ -1,0 +1,43 @@
+| Student Pain Point               | App Feature Idea                        |
+| -------------------------------- | --------------------------------------- |
+| Confusion in Career Path         | Roadmaps (Java, Python, Design, etc.)   |
+| No placement strategy            | Step-wise plan for 1st → 4th year       |
+| Resume kaise banaye, kya likhe   | Resume builder + Examples + GitHub tips |
+| Projects idea nahi hai           | Project bank + showcase                 |
+| No awareness of internships/jobs | College-focused Job & Internship board  |
+| DSA aur aptitude pressure        | Daily prep zone + timer + flashcards    |
+| Lack of motivation               | Quotes + Progress Tracker + Peer chat   |
+
+
+
+
+
+
+
+| Component            | Tools Suggestion                                   |
+| -------------------- | -------------------------------------------------- |
+| Frontend             | React + Tailwind                                   |
+| Backend              | Node.js + Express                                  |
+| Database             | MongoDB                                            |
+| File Storage         | Firebase / Cloudinary (for notes/images)           |
+| Auth System          | Firebase Auth / JWT                                |
+| Video Embeds         | YouTube embed / local uploads                      |
+| Optional Admin Panel | For you to manage content (e.g., Strapi or custom) |
+
+
+
+
+
+
+
+
+
+
+| Phase      | Goal                                          |
+| ---------- | --------------------------------------------- |
+| 🔹 Phase 1 | Static app: Notes + Roadmap + Resources       |
+| 🔹 Phase 2 | Add teaching videos + resume/github zone      |
+| 🔹 Phase 3 | Add Q\&A system + student submission form     |
+| 🔹 Phase 4 | Dashboard + login + chat system               |
+| 🔹 Phase 5 | Launch to college + LinkedIn story + outreach |
+

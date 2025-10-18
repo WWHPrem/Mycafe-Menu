@@ -1,0 +1,85 @@
+:root {
+	--title: "Scream Theater";
+	--author: "Matt Cannon";
+	--contact: "mc@mattcannon.design";
+	--description: "Nodding to the iconic Ghostface mask from Scream and packed theaters in the 90's. A looping YouTube clip framed under a theater overlay, with a CSS mask adding a subtle vignette for a cinematic feel. Fun fact: that mask was a pre-existing store-bought design (later licensed). It's off-the-shelf origin made the original film feel eerily real.";
+	--keywords: "css mask, radial mask, vignette, movie theater overlay, ghostface, scream mask, youtube embed, autoplay loop, halloween ui, codepenchallenge, cpc-halloween-masks, horror";
+	--last-modified: "2025-10-14";
+	--content-language: "en";
+	--generator: "HTML5, CSS3, JavaScript";
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background: #000;
+	overflow: hidden;
+}
+.container {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+.video-frame {
+	position: absolute;
+	top: -10%;
+	left: 10%;
+	width: 80%;
+	height: 80%;
+	z-index: 2;
+	border-radius: 18px;
+	overflow: hidden;
+	background: #000;
+	-webkit-mask-image: radial-gradient(
+		150% 120% at 50% 50%,
+		#000 60%,
+		rgba(0, 0, 0, 0.85) 75%,
+		transparent 100%
+	);
+	mask-image: radial-gradient(
+		120% 120% at 50% 50%,
+		#000 60%,
+		rgba(0, 0, 0, 0.85) 75%,
+		transparent 100%
+	);
+}
+.video-frame iframe {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -52%) scale(1.035);
+	width: 100%;
+	height: 100%;
+	border: 0;
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.2s;
+}
+.video-frame::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(#000 0 12%, transparent 22%);
+	z-index: 3;
+}
+.video-frame::after {
+	content: "";
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 16%;
+	height: 16%;
+	background: #000;
+	z-index: 3;
+}
+.theater {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: url("https://mattcannon.games/codepen/followers/200/theater.png")
+		center/contain no-repeat;
+	z-index: 10;
+}

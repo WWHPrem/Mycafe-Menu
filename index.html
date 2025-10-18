@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EmoSense Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <h1>EmoSense Mood Journal</h1>
+
+  <!-- Top Section -->
+  <div class="top-section">
+    <!-- Left: Form -->
+    <div class="card">
+      <h2>Add New Entry</h2>
+      <div class="form-group">
+        <label for="mood">Mood:</label>
+        <select id="mood"></select>
+      </div>
+      <div class="form-group">
+        <label for="note">Note:</label>
+        <input type="text" id="note" placeholder="Write something..." />
+      </div>
+      <button onclick="addEntry()">Save Entry</button>
+    </div>
+
+    <!-- Right: Table -->
+    <div class="card">
+      <h2>Recent Entries</h2>
+      <table>
+        <thead>
+          <tr><th>Mood</th><th>Note</th><th>Time</th></tr>
+        </thead>
+        <tbody id="entriesTable"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Bottom Section: Charts -->
+  <div class="bottom-section card charts">
+    <h2>Mood Analysis</h2>
+    <canvas id="moodBarChart"></canvas>
+    <canvas id="moodPieChart"></canvas>
+  </div>
+
+  <script src="script1.js"></script>
+  
+</body>
+</html>
